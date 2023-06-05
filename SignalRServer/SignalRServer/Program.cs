@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(MyAllowSpecificOrigins,
         builder =>
         {
-            builder.WithOrigins("http://localhost:8081")
+            builder.WithOrigins("http://localhost:8081","http://localhost:8080")
             //builder.AllowAnyOrigin()
                    .AllowAnyMethod()
                    .AllowAnyHeader()
@@ -83,31 +83,12 @@ app.UseAuthentication();//身分驗證
 
 app.UseAuthorization();//授權
 
-//app.UseCors(x => x.SetIsOriginAllowed(_ => true)
-//    .AllowAnyMethod()
-//    .AllowAnyHeader()
-//    .AllowCredentials());
-
 
 app.UseEndpoints(x =>
 {
     x.MapHub<ProgressHub>("/ProgressHub");
+    x.MapHub<ProgressHub2>("/ProgressHub2");
 });
-//app.MapHub<ProgressHub>("/ProgressHub");
-
-//app.Use(async (context, next) =>
-//{
-//    if (context.Request.Path.Value.StartsWith("/ProgressHub"))
-//    {
-//        var bearerToken = context.Request.Query["access_token"].ToString();
-
-//        if (!String.IsNullOrEmpty(bearerToken))
-//            context.Request.Headers.Add("Authorization", "Bearer " + bearerToken);
-//    }
-
-//    await next();
-//});
-
 
 app.MapControllers();
 

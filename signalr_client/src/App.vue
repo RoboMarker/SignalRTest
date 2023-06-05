@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>|
     <router-link to="/Progress">ProgressView</router-link>|
-    <router-link to="/SignalRTest">SignalRTest</router-link>
+    <router-link to="/SignalRTest">SignalRTest</router-link>|
+    <router-link to="/SignalRTest2Parent">SignalRTest2Parent</router-link>
   </nav>
   <router-view/>
 </template>

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProgressView from '../views/ProgressView.vue'
 import SignalRTest from '../views/SignalRTest.vue'
+import SignalRTest2Parent from '../views/SignalRTest2Parent.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/SignalRTest',
     name: 'SignalRTest',
     component: SignalRTest
+  },
+  {
+    path: '/SignalRTest2Parent',
+    name: 'SignalRTest2Parent',
+    component: SignalRTest2Parent
   }
 ]
 
